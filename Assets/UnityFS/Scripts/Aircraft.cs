@@ -28,12 +28,16 @@ public class Aircraft : MonoBehaviour
 	private GUIText AltitudeText = null;
 	private GUIText RateOfClimbText = null;
 
+	public void setCameras(){
+		AircraftCameras = GetComponentsInChildren<AircraftCamera>();
+	}
+
 	// Use this for initialization
 	public virtual void Start () 
 	{
 		//Register a list of all attached parts and cameras..
 		AircraftAttachments = GetComponentsInChildren<AircraftAttachment>();
-		AircraftCameras = GetComponentsInChildren<AircraftCamera>();
+		//AircraftCameras = GetComponentsInChildren<AircraftCamera>();
 		AircraftEngines	 = GetComponentsInChildren<Engine>();
 		
 		//Enable control if requested at start.
