@@ -21,8 +21,9 @@ public class NetworkManager : Photon.MonoBehaviour {
 	}
 
 	void OnJoinedRoom(){
-		GameObject myPlane = PhotonNetwork.Instantiate("Plane",Random.onUnitSphere ,Quaternion.identity,0);
+		GameObject myPlane = PhotonNetwork.Instantiate("Plane", new Vector3(Random.onUnitSphere.x * 30, 0f, Random.onUnitSphere.z * 30) ,Quaternion.identity,0);
 		Camera.main.transform.parent = myPlane.transform;
+		Camera.main.transform.position = myPlane.transform.position + new Vector3 (0f, 2f, -10f);
 
 	}
 
