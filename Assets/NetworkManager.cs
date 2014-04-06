@@ -5,7 +5,6 @@ public class NetworkManager : Photon.MonoBehaviour {
 	public static GameObject currentPlane;
 	public Cameras camerasObject;
 	public GameObject minimapprefab;
-	public GameObject planeholder;
 	// Use this for initialization
 	void Start () {
 		PhotonNetwork.ConnectUsingSettings("alpha 0.1");

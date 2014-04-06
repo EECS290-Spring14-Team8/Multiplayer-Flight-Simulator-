@@ -12,6 +12,7 @@ public class MovementInfo : MonoBehaviour {
 				GameObject dynamics =  list[i].transform.FindChild("Dynamics").gameObject;
 				Debug.Log(dynamics);
 				dynamics.SetActive(false);
+				list[i].GetComponent<Reset>().enabled = false;
 			}
 		}
 	}
