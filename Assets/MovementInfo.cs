@@ -5,7 +5,15 @@ public class MovementInfo : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		GameObject[] list = GameObject.FindGameObjectsWithTag("Player");
+		for(int i = 0; i < list.Length; i++){
+			if(list[i] != NetworkManager.currentPlane){
+				Debug.Log (i);
+				GameObject dynamics =  list[i].transform.FindChild("Dynamics").gameObject;
+				Debug.Log(dynamics);
+				dynamics.SetActive(false);
+			}
+		}
 	}
 	
 	// Update is called once per frame
