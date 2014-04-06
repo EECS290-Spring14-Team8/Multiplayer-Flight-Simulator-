@@ -2,8 +2,6 @@
 using System.Collections;
 
 public class Smoke : MonoBehaviour {
-	
-	public Transform plane;
 	public GameObject smoke;
 	Queue smokeParticles;
 	GameObject temp;
@@ -15,7 +13,7 @@ public class Smoke : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKey ("space")){
-			smoke = PhotonNetwork.Instantiate ("Smoke Trail", plane.position, Quaternion.identity, 0);
+			smoke = PhotonNetwork.Instantiate ("Smoke Trail", NetworkManager.currentPlane.transform.position, Quaternion.identity, 0);
 			smokeParticles.Enqueue (smoke);
 		}
 		if (smokeParticles.Count > 100) {
